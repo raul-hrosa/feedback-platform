@@ -71,4 +71,12 @@ describe('AuthController (integration)', () => {
       .send({ email: 'user@email.com', password: '123' })
       .expect(400);
   });
+
+  it('POST /auth/register → 400 when password is too long (> 72 chars)', async () => {
+    const longPassword = 'a'.repeat(73);
+    await request(app.getHttpServer())
+      .post('/auth/register')
+      .send({ email: 'user@email.com', password: longPassword })
+      .expect(400);
+  });
 });

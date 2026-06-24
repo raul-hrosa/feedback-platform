@@ -23,7 +23,7 @@ flowchart LR
 
     Redis[(Redis)]
 
-    Worker[BullMQ Workers]
+    Worker[BullMQ Workers)]
 
     User --> Web
 
@@ -51,10 +51,12 @@ flowchart LR
 
 - NestJS
 - Modular Monolith
+- Clean Architecture por Módulo
 
 ### Database
 
 - MySQL
+- Prisma ORM
 
 ### Cache & Queue
 
@@ -83,6 +85,120 @@ docs/
 
 infra/
 ```
+
+---
+
+## Backend Structure
+
+```text
+src/
+
+core/
+├── database/
+├── config/
+├── health/
+└── logger/
+
+modules/
+├── auth/
+├── company/
+├── unit/
+├── feedback/
+├── dashboard/
+└── notification/
+```
+
+### Core
+
+Componentes técnicos compartilhados por toda a aplicação.
+
+Exemplos:
+
+- Database
+- Configurações
+- Health Checks
+- Logging
+- Filas
+
+### Modules
+
+Domínios de negócio independentes.
+
+Cada módulo encapsula suas regras de negócio e implementações técnicas.
+
+---
+
+## Clean Architecture
+
+Cada módulo seguirá a estrutura:
+
+```text
+module/
+
+├── domain/
+│   ├── entities/
+│   ├── repositories/
+│   └── errors/
+│
+├── application/
+│   ├── dto/
+│   └── use-cases/
+│
+├── infrastructure/
+│   ├── controllers/
+│   ├── repositories/
+│   └── persistence/
+│
+└── module.ts
+```
+
+### Responsabilidades
+
+#### Domain
+
+Contém regras de negócio puras.
+
+Não depende de:
+
+- NestJS
+- Prisma
+- MySQL
+- Redis
+
+#### Application
+
+Contém os casos de uso da aplicação.
+
+Exemplos:
+
+- RegisterUserUseCase
+- LoginUserUseCase
+- CreateCompanyUseCase
+
+#### Infrastructure
+
+Contém implementações técnicas.
+
+Exemplos:
+
+- Controllers
+- Prisma Repositories
+- Providers
+- External Services
+
+---
+
+## Dependency Flow
+
+```mermaid
+flowchart TD
+
+    Infrastructure --> Application
+
+    Application --> Domain
+```
+
+As camadas internas nunca dependem das externas.
 
 ---
 
@@ -156,3 +272,5 @@ Planejadas para versões futuras:
 - ADR-008 Modular Monolith
 - ADR-009 Multi-Tenancy
 - ADR-010 API First
+- ADR-011 Core / Modules
+- ADR-012 Clean Architecture por Módulo
