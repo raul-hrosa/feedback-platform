@@ -51,12 +51,7 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Company: 'Company',
-  User: 'User',
-  Unit: 'Unit',
-  Survey: 'Survey',
-  Feedback: 'Feedback',
-  Alert: 'Alert'
+  User: 'User'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -75,87 +70,17 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const CompanyScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  document: 'document',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeof CompanyScalarFieldEnum]
-
-
 export const UserScalarFieldEnum = {
   id: 'id',
-  companyId: 'companyId',
-  name: 'name',
   email: 'email',
   passwordHash: 'passwordHash',
-  role: 'role',
+  status: 'status',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  deletedAt: 'deletedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
-
-
-export const UnitScalarFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  name: 'name',
-  slug: 'slug',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type UnitScalarFieldEnum = (typeof UnitScalarFieldEnum)[keyof typeof UnitScalarFieldEnum]
-
-
-export const SurveyScalarFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  unitId: 'unitId',
-  title: 'title',
-  slug: 'slug',
-  status: 'status',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type SurveyScalarFieldEnum = (typeof SurveyScalarFieldEnum)[keyof typeof SurveyScalarFieldEnum]
-
-
-export const FeedbackScalarFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  unitId: 'unitId',
-  surveyId: 'surveyId',
-  score: 'score',
-  comment: 'comment',
-  customerName: 'customerName',
-  customerEmail: 'customerEmail',
-  customerPhone: 'customerPhone',
-  classification: 'classification',
-  source: 'source',
-  metadata: 'metadata',
-  createdAt: 'createdAt'
-} as const
-
-export type FeedbackScalarFieldEnum = (typeof FeedbackScalarFieldEnum)[keyof typeof FeedbackScalarFieldEnum]
-
-
-export const AlertScalarFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  feedbackId: 'feedbackId',
-  type: 'type',
-  status: 'status',
-  createdAt: 'createdAt',
-  resolvedAt: 'resolvedAt'
-} as const
-
-export type AlertScalarFieldEnum = (typeof AlertScalarFieldEnum)[keyof typeof AlertScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -166,14 +91,6 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-export const NullableJsonNullValueInput = {
-  DbNull: DbNull,
-  JsonNull: JsonNull
-} as const
-
-export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
-
-
 export const NullsOrder = {
   first: 'first',
   last: 'last'
@@ -182,83 +99,11 @@ export const NullsOrder = {
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-export const CompanyOrderByRelevanceFieldEnum = {
-  id: 'id',
-  name: 'name',
-  document: 'document'
-} as const
-
-export type CompanyOrderByRelevanceFieldEnum = (typeof CompanyOrderByRelevanceFieldEnum)[keyof typeof CompanyOrderByRelevanceFieldEnum]
-
-
 export const UserOrderByRelevanceFieldEnum = {
   id: 'id',
-  companyId: 'companyId',
-  name: 'name',
   email: 'email',
   passwordHash: 'passwordHash'
 } as const
 
 export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
-
-
-export const UnitOrderByRelevanceFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  name: 'name',
-  slug: 'slug'
-} as const
-
-export type UnitOrderByRelevanceFieldEnum = (typeof UnitOrderByRelevanceFieldEnum)[keyof typeof UnitOrderByRelevanceFieldEnum]
-
-
-export const SurveyOrderByRelevanceFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  unitId: 'unitId',
-  title: 'title',
-  slug: 'slug'
-} as const
-
-export type SurveyOrderByRelevanceFieldEnum = (typeof SurveyOrderByRelevanceFieldEnum)[keyof typeof SurveyOrderByRelevanceFieldEnum]
-
-
-export const JsonNullValueFilter = {
-  DbNull: DbNull,
-  JsonNull: JsonNull,
-  AnyNull: AnyNull
-} as const
-
-export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
-
-
-export const QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
-} as const
-
-export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
-
-
-export const FeedbackOrderByRelevanceFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  unitId: 'unitId',
-  surveyId: 'surveyId',
-  comment: 'comment',
-  customerName: 'customerName',
-  customerEmail: 'customerEmail',
-  customerPhone: 'customerPhone'
-} as const
-
-export type FeedbackOrderByRelevanceFieldEnum = (typeof FeedbackOrderByRelevanceFieldEnum)[keyof typeof FeedbackOrderByRelevanceFieldEnum]
-
-
-export const AlertOrderByRelevanceFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  feedbackId: 'feedbackId'
-} as const
-
-export type AlertOrderByRelevanceFieldEnum = (typeof AlertOrderByRelevanceFieldEnum)[keyof typeof AlertOrderByRelevanceFieldEnum]
 
