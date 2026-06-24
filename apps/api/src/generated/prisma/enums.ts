@@ -9,49 +9,9 @@
 * 🟢 You can import this file directly.
 */
 
-export const UserRole = {
-  ADMIN: 'ADMIN',
-  MANAGER: 'MANAGER'
-} as const
-
-export type UserRole = (typeof UserRole)[keyof typeof UserRole]
-
-
-export const SurveyStatus = {
+export const UserStatus = {
   ACTIVE: 'ACTIVE',
   INACTIVE: 'INACTIVE'
 } as const
 
-export type SurveyStatus = (typeof SurveyStatus)[keyof typeof SurveyStatus]
-
-
-export const NpsCategory = {
-  DETRACTOR: 'DETRACTOR',
-  PASSIVE: 'PASSIVE',
-  PROMOTER: 'PROMOTER'
-} as const
-
-export type NpsCategory = (typeof NpsCategory)[keyof typeof NpsCategory]
-
-
-export const FeedbackSource = {
-  QR_CODE: 'QR_CODE',
-  WEB: 'WEB'
-} as const
-
-export type FeedbackSource = (typeof FeedbackSource)[keyof typeof FeedbackSource]
-
-
-export const AlertType = {
-  DETRACTOR_FEEDBACK: 'DETRACTOR_FEEDBACK'
-} as const
-
-export type AlertType = (typeof AlertType)[keyof typeof AlertType]
-
-
-export const AlertStatus = {
-  PENDING: 'PENDING',
-  RESOLVED: 'RESOLVED'
-} as const
-
-export type AlertStatus = (typeof AlertStatus)[keyof typeof AlertStatus]
+export type UserStatus = (typeof UserStatus)[keyof typeof UserStatus]

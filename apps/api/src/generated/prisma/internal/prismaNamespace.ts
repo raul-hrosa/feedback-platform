@@ -384,12 +384,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Company: 'Company',
-  User: 'User',
-  Unit: 'Unit',
-  Survey: 'Survey',
-  Feedback: 'Feedback',
-  Alert: 'Alert'
+  User: 'User'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -405,76 +400,10 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "company" | "user" | "unit" | "survey" | "feedback" | "alert"
+    modelProps: "user"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
-    Company: {
-      payload: Prisma.$CompanyPayload<ExtArgs>
-      fields: Prisma.CompanyFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.CompanyFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.CompanyFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload>
-        }
-        findFirst: {
-          args: Prisma.CompanyFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.CompanyFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload>
-        }
-        findMany: {
-          args: Prisma.CompanyFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload>[]
-        }
-        create: {
-          args: Prisma.CompanyCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload>
-        }
-        createMany: {
-          args: Prisma.CompanyCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.CompanyDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload>
-        }
-        update: {
-          args: Prisma.CompanyUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload>
-        }
-        deleteMany: {
-          args: Prisma.CompanyDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.CompanyUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.CompanyUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$CompanyPayload>
-        }
-        aggregate: {
-          args: Prisma.CompanyAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateCompany>
-        }
-        groupBy: {
-          args: Prisma.CompanyGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.CompanyGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.CompanyCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.CompanyCountAggregateOutputType> | number
-        }
-      }
-    }
     User: {
       payload: Prisma.$UserPayload<ExtArgs>
       fields: Prisma.UserFieldRefs
@@ -541,270 +470,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    Unit: {
-      payload: Prisma.$UnitPayload<ExtArgs>
-      fields: Prisma.UnitFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.UnitFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.UnitFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload>
-        }
-        findFirst: {
-          args: Prisma.UnitFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.UnitFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload>
-        }
-        findMany: {
-          args: Prisma.UnitFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload>[]
-        }
-        create: {
-          args: Prisma.UnitCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload>
-        }
-        createMany: {
-          args: Prisma.UnitCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.UnitDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload>
-        }
-        update: {
-          args: Prisma.UnitUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload>
-        }
-        deleteMany: {
-          args: Prisma.UnitDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.UnitUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.UnitUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UnitPayload>
-        }
-        aggregate: {
-          args: Prisma.UnitAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateUnit>
-        }
-        groupBy: {
-          args: Prisma.UnitGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.UnitGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.UnitCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.UnitCountAggregateOutputType> | number
-        }
-      }
-    }
-    Survey: {
-      payload: Prisma.$SurveyPayload<ExtArgs>
-      fields: Prisma.SurveyFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.SurveyFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.SurveyFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload>
-        }
-        findFirst: {
-          args: Prisma.SurveyFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.SurveyFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload>
-        }
-        findMany: {
-          args: Prisma.SurveyFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload>[]
-        }
-        create: {
-          args: Prisma.SurveyCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload>
-        }
-        createMany: {
-          args: Prisma.SurveyCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.SurveyDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload>
-        }
-        update: {
-          args: Prisma.SurveyUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload>
-        }
-        deleteMany: {
-          args: Prisma.SurveyDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.SurveyUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.SurveyUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SurveyPayload>
-        }
-        aggregate: {
-          args: Prisma.SurveyAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateSurvey>
-        }
-        groupBy: {
-          args: Prisma.SurveyGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.SurveyGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.SurveyCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.SurveyCountAggregateOutputType> | number
-        }
-      }
-    }
-    Feedback: {
-      payload: Prisma.$FeedbackPayload<ExtArgs>
-      fields: Prisma.FeedbackFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.FeedbackFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.FeedbackFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload>
-        }
-        findFirst: {
-          args: Prisma.FeedbackFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.FeedbackFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload>
-        }
-        findMany: {
-          args: Prisma.FeedbackFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload>[]
-        }
-        create: {
-          args: Prisma.FeedbackCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload>
-        }
-        createMany: {
-          args: Prisma.FeedbackCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.FeedbackDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload>
-        }
-        update: {
-          args: Prisma.FeedbackUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload>
-        }
-        deleteMany: {
-          args: Prisma.FeedbackDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.FeedbackUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.FeedbackUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FeedbackPayload>
-        }
-        aggregate: {
-          args: Prisma.FeedbackAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateFeedback>
-        }
-        groupBy: {
-          args: Prisma.FeedbackGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.FeedbackGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.FeedbackCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.FeedbackCountAggregateOutputType> | number
-        }
-      }
-    }
-    Alert: {
-      payload: Prisma.$AlertPayload<ExtArgs>
-      fields: Prisma.AlertFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.AlertFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.AlertFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload>
-        }
-        findFirst: {
-          args: Prisma.AlertFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.AlertFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload>
-        }
-        findMany: {
-          args: Prisma.AlertFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload>[]
-        }
-        create: {
-          args: Prisma.AlertCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload>
-        }
-        createMany: {
-          args: Prisma.AlertCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.AlertDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload>
-        }
-        update: {
-          args: Prisma.AlertUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload>
-        }
-        deleteMany: {
-          args: Prisma.AlertDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.AlertUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.AlertUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AlertPayload>
-        }
-        aggregate: {
-          args: Prisma.AlertAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateAlert>
-        }
-        groupBy: {
-          args: Prisma.AlertGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AlertGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.AlertCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AlertCountAggregateOutputType> | number
-        }
-      }
-    }
   }
 } & {
   other: {
@@ -844,87 +509,17 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const CompanyScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  document: 'document',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeof CompanyScalarFieldEnum]
-
-
 export const UserScalarFieldEnum = {
   id: 'id',
-  companyId: 'companyId',
-  name: 'name',
   email: 'email',
   passwordHash: 'passwordHash',
-  role: 'role',
+  status: 'status',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  deletedAt: 'deletedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
-
-
-export const UnitScalarFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  name: 'name',
-  slug: 'slug',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type UnitScalarFieldEnum = (typeof UnitScalarFieldEnum)[keyof typeof UnitScalarFieldEnum]
-
-
-export const SurveyScalarFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  unitId: 'unitId',
-  title: 'title',
-  slug: 'slug',
-  status: 'status',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type SurveyScalarFieldEnum = (typeof SurveyScalarFieldEnum)[keyof typeof SurveyScalarFieldEnum]
-
-
-export const FeedbackScalarFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  unitId: 'unitId',
-  surveyId: 'surveyId',
-  score: 'score',
-  comment: 'comment',
-  customerName: 'customerName',
-  customerEmail: 'customerEmail',
-  customerPhone: 'customerPhone',
-  classification: 'classification',
-  source: 'source',
-  metadata: 'metadata',
-  createdAt: 'createdAt'
-} as const
-
-export type FeedbackScalarFieldEnum = (typeof FeedbackScalarFieldEnum)[keyof typeof FeedbackScalarFieldEnum]
-
-
-export const AlertScalarFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  feedbackId: 'feedbackId',
-  type: 'type',
-  status: 'status',
-  createdAt: 'createdAt',
-  resolvedAt: 'resolvedAt'
-} as const
-
-export type AlertScalarFieldEnum = (typeof AlertScalarFieldEnum)[keyof typeof AlertScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -935,14 +530,6 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-export const NullableJsonNullValueInput = {
-  DbNull: DbNull,
-  JsonNull: JsonNull
-} as const
-
-export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
-
-
 export const NullsOrder = {
   first: 'first',
   last: 'last'
@@ -951,85 +538,13 @@ export const NullsOrder = {
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-export const CompanyOrderByRelevanceFieldEnum = {
-  id: 'id',
-  name: 'name',
-  document: 'document'
-} as const
-
-export type CompanyOrderByRelevanceFieldEnum = (typeof CompanyOrderByRelevanceFieldEnum)[keyof typeof CompanyOrderByRelevanceFieldEnum]
-
-
 export const UserOrderByRelevanceFieldEnum = {
   id: 'id',
-  companyId: 'companyId',
-  name: 'name',
   email: 'email',
   passwordHash: 'passwordHash'
 } as const
 
 export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
-
-
-export const UnitOrderByRelevanceFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  name: 'name',
-  slug: 'slug'
-} as const
-
-export type UnitOrderByRelevanceFieldEnum = (typeof UnitOrderByRelevanceFieldEnum)[keyof typeof UnitOrderByRelevanceFieldEnum]
-
-
-export const SurveyOrderByRelevanceFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  unitId: 'unitId',
-  title: 'title',
-  slug: 'slug'
-} as const
-
-export type SurveyOrderByRelevanceFieldEnum = (typeof SurveyOrderByRelevanceFieldEnum)[keyof typeof SurveyOrderByRelevanceFieldEnum]
-
-
-export const JsonNullValueFilter = {
-  DbNull: DbNull,
-  JsonNull: JsonNull,
-  AnyNull: AnyNull
-} as const
-
-export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
-
-
-export const QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
-} as const
-
-export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
-
-
-export const FeedbackOrderByRelevanceFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  unitId: 'unitId',
-  surveyId: 'surveyId',
-  comment: 'comment',
-  customerName: 'customerName',
-  customerEmail: 'customerEmail',
-  customerPhone: 'customerPhone'
-} as const
-
-export type FeedbackOrderByRelevanceFieldEnum = (typeof FeedbackOrderByRelevanceFieldEnum)[keyof typeof FeedbackOrderByRelevanceFieldEnum]
-
-
-export const AlertOrderByRelevanceFieldEnum = {
-  id: 'id',
-  companyId: 'companyId',
-  feedbackId: 'feedbackId'
-} as const
-
-export type AlertOrderByRelevanceFieldEnum = (typeof AlertOrderByRelevanceFieldEnum)[keyof typeof AlertOrderByRelevanceFieldEnum]
 
 
 
@@ -1046,6 +561,13 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
 
 
 /**
+ * Reference to a field of type 'UserStatus'
+ */
+export type EnumUserStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'UserStatus'>
+    
+
+
+/**
  * Reference to a field of type 'DateTime'
  */
 export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -1053,72 +575,9 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
 
 
 /**
- * Reference to a field of type 'UserRole'
- */
-export type EnumUserRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'UserRole'>
-    
-
-
-/**
- * Reference to a field of type 'SurveyStatus'
- */
-export type EnumSurveyStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SurveyStatus'>
-    
-
-
-/**
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-/**
- * Reference to a field of type 'NpsCategory'
- */
-export type EnumNpsCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'NpsCategory'>
-    
-
-
-/**
- * Reference to a field of type 'FeedbackSource'
- */
-export type EnumFeedbackSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'FeedbackSource'>
-    
-
-
-/**
- * Reference to a field of type 'Json'
- */
-export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
-    
-
-
-/**
- * Reference to a field of type 'QueryMode'
- */
-export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
-    
-
-
-/**
- * Reference to a field of type 'AlertType'
- */
-export type EnumAlertTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AlertType'>
-    
-
-
-/**
- * Reference to a field of type 'AlertStatus'
- */
-export type EnumAlertStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AlertStatus'>
-    
-
-
-/**
- * Reference to a field of type 'Float'
- */
-export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
     
 
 /**
@@ -1231,12 +690,7 @@ export type PrismaClientOptions = ({
   queryPlanCacheMaxSize?: number
 }
 export type GlobalOmitConfig = {
-  company?: Prisma.CompanyOmit
   user?: Prisma.UserOmit
-  unit?: Prisma.UnitOmit
-  survey?: Prisma.SurveyOmit
-  feedback?: Prisma.FeedbackOmit
-  alert?: Prisma.AlertOmit
 }
 
 /* Types for Logging */
