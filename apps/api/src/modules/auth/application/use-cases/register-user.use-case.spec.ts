@@ -15,7 +15,7 @@ describe('RegisterUserUseCase', () => {
 
   beforeEach(() => {
     userRepository = { findByEmail: jest.fn(), create: jest.fn() };
-    hashService = { hash: jest.fn() };
+    hashService = { hash: jest.fn(), compare: jest.fn() };
     useCase = new RegisterUserUseCase(userRepository, hashService);
   });
 
