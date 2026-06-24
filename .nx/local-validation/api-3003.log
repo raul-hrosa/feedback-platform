@@ -1,0 +1,278 @@
+
+[7m[1m[36m NX [39m[22m[27m  [36mRunning target [1mserve[22m for project api and [1m1[22m task it depends on:[39m
+
+[2m[36m[39m[22m
+
+[2m> [22m[2mnx run[22m api:build  [2m[existing outputs match the cache, left as is][22m
+
+[2m> [22mwebpack-cli build
+
+webpack compiled [1m[32msuccessfully[39m[22m (ad5451b098961711)
+
+[2m> [22m[2mnx run[22m api:serve:development
+
+[2m> [22m[2mnx run[22m api:build:development  [2m[local cache][22m
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (ad5451b098961711)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[2mNx read the output from the cache instead of running the command for 1 out of 1 tasks.[22m
+[1m[31mDebugger listening on ws://localhost:9229/b51c7642-39b7-451f-a3f8-2e39650f12d3
+Debugger listening on ws://localhost:9229/b51c7642-39b7-451f-a3f8-2e39650f12d3
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 26104  - [39m24/06/2026, 07:42:18 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 26104  - [39m24/06/2026, 07:42:18 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +13ms[39m
+[32m[Nest] 26104  - [39m24/06/2026, 07:42:18 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 26104  - [39m24/06/2026, 07:42:18 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 26104  - [39m24/06/2026, 07:42:18 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[32m[Nest] 26104  - [39m24/06/2026, 07:42:18 [32m    LOG[39m [32mApplication is running on: http://localhost:3003/api[39m
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 4294967295, waiting for changes to restart...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[2m> [22m[2mnx run[22m api:build:development
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (ad5451b098961711)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[1m[31mDebugger listening on ws://localhost:9229/a8e5c07a-8743-4cbc-83e8-7253fbc95353
+Debugger listening on ws://localhost:9229/a8e5c07a-8743-4cbc-83e8-7253fbc95353
+For help, see: https://nodejs.org/learn/getting-started/debugging
+[39m[22m
+[32m[Nest] 13792  - [39m24/06/2026, 09:08:27 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 13792  - [39m24/06/2026, 09:08:27 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +10ms[39m
+[32m[Nest] 13792  - [39m24/06/2026, 09:08:27 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 13792  - [39m24/06/2026, 09:08:27 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +4ms[39m
+[32m[Nest] 13792  - [39m24/06/2026, 09:08:27 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[1m[31m[31m[Nest] 13792  - [31m24/06/2026, 09:08:27 [31m  ERROR[31m [38;5;3m[NestApplication] [31m[31mError: listen EADDRINUSE: address already in use :::3003[31m[38;5;3m +1ms[31m
+[39m[22m
+[1m[31mError: listen EADDRINUSE: address already in use :::3003
+    at Server.setupListenHandle [as _listen2] (node:net:1941:16)
+    at listenInCluster (node:net:1998:12)
+    at Server.listen (node:net:2103:7)
+    at ExpressAdapter.listen (D:\Documentos\Projetos\project-nps\node_modules\@nestjs\platform-express\adapters\express-adapter.js:115:32)
+    at D:\Documentos\Projetos\project-nps\node_modules\@nestjs\core\nest-application.js:190:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\Documentos\Projetos\project-nps\node_modules\@nestjs\core\nest-application.js:180:16)
+    at bootstrap (D:\Documentos\Projetos\project-nps\apps\api\src\main.ts:10:3)
+[39m[22m
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[2m> [22m[2mnx run[22m api:build:development  [2m[existing outputs match the cache, left as is][22m
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (ad5451b098961711)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[2mNx read the output from the cache instead of running the command for 1 out of 1 tasks.[22m
+[1m[31mDebugger listening on ws://localhost:9229/7b6ba9e9-481f-4719-9ec6-5ee5eb123797
+Debugger listening on ws://localhost:9229/7b6ba9e9-481f-4719-9ec6-5ee5eb123797
+For help, see: https://nodejs.org/learn/getting-started/debugging
+[39m[22m
+[32m[Nest] 13552  - [39m24/06/2026, 09:16:52 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 13552  - [39m24/06/2026, 09:16:52 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 13552  - [39m24/06/2026, 09:16:52 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 13552  - [39m24/06/2026, 09:16:52 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 13552  - [39m24/06/2026, 09:16:52 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[1m[31m[31m[Nest] 13552  - [31m24/06/2026, 09:16:52 [31m  ERROR[31m [38;5;3m[NestApplication] [31m[31mError: listen EADDRINUSE: address already in use :::3003[31m[38;5;3m +1ms[31m
+Error: listen EADDRINUSE: address already in use :::3003
+    at Server.setupListenHandle [as _listen2] (node:net:1941:16)
+    at listenInCluster (node:net:1998:12)
+    at Server.listen (node:net:2103:7)
+    at ExpressAdapter.listen (D:\Documentos\Projetos\project-nps\node_modules\@nestjs\platform-express\adapters\express-adapter.js:115:32)
+    at D:\Documentos\Projetos\project-nps\node_modules\@nestjs\core\nest-application.js:190:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\Documentos\Projetos\project-nps\node_modules\@nestjs\core\nest-application.js:180:16)
+    at bootstrap (D:\Documentos\Projetos\project-nps\apps\api\src\main.ts:10:3)
+[39m[22m
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[2m> [22m[2mnx run[22m api:build:development
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (0959a55b40dedf1b)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[1m[31mDebugger listening on ws://localhost:9229/5f19cb86-1d11-46e1-8bd1-240ff398982a
+Debugger listening on ws://localhost:9229/5f19cb86-1d11-46e1-8bd1-240ff398982a
+For help, see: https://nodejs.org/learn/getting-started/debugging
+[39m[22m
+[32m[Nest] 12712  - [39m24/06/2026, 09:18:23 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[1m[31m[31m[Nest] 12712  - [31m24/06/2026, 09:18:23 [31m  ERROR[31m [38;5;3m[ExceptionHandler] [31mPrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:
+```
+new PrismaClient({
+  ...
+})
+```
+or
+```
+constructor() {
+  super({ ... });
+}
+```
+          
+    at new t [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@prisma\client[24m\src\runtime\getPrismaClient.ts:336:15[90m)[31m
+    at new DatabaseService [90m(D:\Documentos\Projetos\project-nps\[31mapps\api\src\app\database\database.service.ts:5:8[90m)[31m
+    at Injector.instantiateClass [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:430:19[90m)[31m
+    at callback [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:72:45[90m)[31m
+    at Injector.resolveConstructorParams [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:180:24[90m)[31m
+    at Injector.loadInstance [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:77:13[90m)[31m
+    at Injector.loadProvider [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:111:9[90m)[31m
+    at [90mD:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at InstanceLoader.createInstancesOfProviders [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\instance-loader.js:55:9[90m)[31m {
+  clientVersion: [32m'7.8.0'[31m,
+  errorCode: [90mundefined[31m,
+  retryable: [90mundefined[31m
+}
+[39m[22m
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[2m> [22m[2mnx run[22m api:build:development
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (e3f3332a93e9d6fb)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[1m[31mDebugger listening on ws://localhost:9229/063ba0ac-62f2-454b-9907-c1cabb07ca0e
+Debugger listening on ws://localhost:9229/063ba0ac-62f2-454b-9907-c1cabb07ca0e
+For help, see: https://nodejs.org/learn/getting-started/debugging
+[39m[22m
+[32m[Nest] 21656  - [39m24/06/2026, 09:20:13 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[1m[31m[31m[Nest] 21656  - [31m24/06/2026, 09:20:13 [31m  ERROR[31m [38;5;3m[ExceptionHandler] [31mPrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:
+```
+new PrismaClient({
+  ...
+})
+```
+or
+```
+constructor() {
+  super({ ... });
+}
+```
+          
+    at new t [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@prisma\client[24m\src\runtime\getPrismaClient.ts:336:15[90m)[31m
+    at new DatabaseService [90m(D:\Documentos\Projetos\project-nps\[31mapps\api\src\app\database\database.service.ts:5:8[90m)[31m
+    at Injector.instantiateClass [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:430:19[90m)[31m
+    at callback [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:72:45[90m)[31m
+    at Injector.resolveConstructorParams [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:180:24[90m)[31m
+    at Injector.loadInstance [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:77:13[90m)[31m
+    at Injector.loadProvider [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:111:9[90m)[31m
+    at [90mD:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at InstanceLoader.createInstancesOfProviders [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\instance-loader.js:55:9[90m)[31m {
+  clientVersion: [32m'7.8.0'[31m,
+  errorCode: [90mundefined[31m,
+  retryable: [90mundefined[31m
+}
+[39m[22m
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[2m> [22m[2mnx run[22m api:build:development
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (868a94c7451c161f)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[1m[31mDebugger listening on ws://localhost:9229/51fb77ee-0e14-4055-9d9a-59f4e76f08b5
+Debugger listening on ws://localhost:9229/51fb77ee-0e14-4055-9d9a-59f4e76f08b5
+For help, see: https://nodejs.org/learn/getting-started/debugging
+[39m[22m
+[32m[Nest] 6704  - [39m24/06/2026, 09:21:17 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[1m[31m[31m[Nest] 6704  - [31m24/06/2026, 09:21:18 [31m  ERROR[31m [38;5;3m[ExceptionHandler] [31mPrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:
+```
+new PrismaClient({
+  ...
+})
+```
+or
+```
+constructor() {
+  super({ ... });
+}
+```
+          
+    at new t [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@prisma\client[24m\src\runtime\getPrismaClient.ts:336:15[90m)[31m
+    at new DatabaseService [90m(D:\Documentos\Projetos\project-nps\[31mapps\api\src\app\database\database.service.ts:5:8[90m)[31m
+    at Injector.instantiateClass [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:430:19[90m)[31m
+    at callback [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:72:45[90m)[31m
+    at Injector.resolveConstructorParams [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:180:24[90m)[31m
+    at Injector.loadInstance [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:77:13[90m)[31m
+    at Injector.loadProvider [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\injector.js:111:9[90m)[31m
+    at [90mD:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\instance-loader.js:56:13
+    at async Promise.all (index 3)
+    at InstanceLoader.createInstancesOfProviders [90m(D:\Documentos\Projetos\project-nps\[31mnode_modules\[4m@nestjs\core[24m\injector\instance-loader.js:55:9[90m)[31m {
+  clientVersion: [32m'7.8.0'[31m,
+  errorCode: [90mundefined[31m,
+  retryable: [90mundefined[31m
+}
+[39m[22m
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[2m> [22m[2mnx run[22m api:build:development
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (483d472574fc3a91)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[1m[31mDebugger listening on ws://localhost:9229/7563d978-dd18-4952-a8eb-5cc7963c4ec4
+Debugger listening on ws://localhost:9229/7563d978-dd18-4952-a8eb-5cc7963c4ec4
+For help, see: https://nodejs.org/learn/getting-started/debugging
+[39m[22m
+[32m[Nest] 26384  - [39m24/06/2026, 09:26:48 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 26384  - [39m24/06/2026, 09:26:48 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDatabaseModule dependencies initialized[39m[38;5;3m +13ms[39m
+[32m[Nest] 26384  - [39m24/06/2026, 09:26:48 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 26384  - [39m24/06/2026, 09:26:48 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 26384  - [39m24/06/2026, 09:26:48 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 26384  - [39m24/06/2026, 09:26:48 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/health/database, GET} route[39m[38;5;3m +1ms[39m
+[1m[31m
+[39m[22m
+[1m[31mD:\Documentos\Projetos\project-nps\node_modules\@prisma\adapter-mariadb\dist\index.js:485
+        throw new Error(
+              ^
+Error: error parsing connection string, format must be 'mariadb://[<user>[:<password>]@]<host>[:<port>]/[<db>[?<opt1>=<value1>[&<opt2>=<value2>]]]'
+    at PrismaMariaDbAdapterFactory.connect (D:\Documentos\Projetos\project-nps\node_modules\@prisma\adapter-mariadb\dist\index.js:485:15)
+    at Function.connect (D:\Documentos\Projetos\project-nps\node_modules\@prisma\client\src\runtime\core\engines\client\LocalExecutor.ts:49:58)
+    at jt.#connectExecutor (D:\Documentos\Projetos\project-nps\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:239:34)
+    at callback (D:\Documentos\Projetos\project-nps\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:188:35)
+    at Object.runInChildSpan (D:\Documentos\Projetos\project-nps\node_modules\@prisma\client\src\runtime\core\tracing\TracingHelper.ts:28:12)
+    at fi.runInChildSpan (D:\Documentos\Projetos\project-nps\node_modules\@prisma\client\src\runtime\core\tracing\TracingHelper.ts:53:36)
+    at jt.#ensureStarted (D:\Documentos\Projetos\project-nps\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:183:47)
+    at jt.start (D:\Documentos\Projetos\project-nps\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:376:16)
+    at Proxy.$connect (D:\Documentos\Projetos\project-nps\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:513:29)
+    at Proxy.onModuleInit (D:\Documentos\Projetos\project-nps\apps\api\src\app\database\database.service.ts:16:16)
+[39m[22m
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[2m> [22m[2mnx run[22m api:build:development
+[2m> [22mwebpack-cli build
+[7m[1m[31m NX [39m[22m[27m  [31mRecursive task invocation detected[39m
+Nx detected a recursive loop of task invocations:
+  api:serve:development -> api:build:development -> api:build:development
+Task "api:build:development" was already invoked by a parent Nx process in this chain.
+This typically happens when a task's command (e.g., "nx build api")
+triggers a chain of tasks that eventually re-invokes itself.
+To fix this, review the command configuration for the tasks in the chain above.
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[7m[1m[31m NX [39m[22m[27m  [31mRecursive task invocation detected[39m
+Nx detected a recursive loop of task invocations:
+  api:serve:development -> api:build:development -> api:build:development
+Task "api:build:development" was already invoked by a parent Nx process in this chain.
+This typically happens when a task's command (e.g., "nx build api")
+triggers a chain of tasks that eventually re-invokes itself.
+To fix this, review the command configuration for the tasks in the chain above.
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m
+[7m[1m[31m NX [39m[22m[27m  [31mRecursive task invocation detected[39m
+Nx detected a recursive loop of task invocations:
+  api:serve:development -> api:build:development -> api:build:development
+Task "api:build:development" was already invoked by a parent Nx process in this chain.
+This typically happens when a task's command (e.g., "nx build api")
+triggers a chain of tasks that eventually re-invokes itself.
+To fix this, review the command configuration for the tasks in the chain above.
+[1m[31mFailed to reconnect to daemon after multiple attempts[39m[22m
+
+[2m[32m[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mserve[22m for project api and [1m1[22m task it depends on[39m
+
+[2mNx read the output from the cache instead of running the command for 1 out of 2 tasks.[22m
+

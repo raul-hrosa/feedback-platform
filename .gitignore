@@ -1,0 +1,15 @@
+
+node_modules/
+dist/
+coverage/
+
+.nx/cache/
+.nx/workspace-data/
+.nx/self-healing/
+.nx/migrate-runs/
+.nx/installation/
+
+.env
+.env.local
+
+.angular

@@ -1,0 +1,39 @@
+
+[7m[1m[36m NX [39m[22m[27m  [36mRunning target [1mserve[22m for project api and [1m1[22m task it depends on:[39m
+
+[2m[36m[39m[22m
+
+[2m> [22m[2mnx run[22m api:build  [2m[local cache][22m
+
+[2m> [22mwebpack-cli build
+
+webpack compiled [1m[32msuccessfully[39m[22m (791c3a9b1b02e996)
+
+[2m> [22m[2mnx run[22m api:serve:development
+
+[2m> [22m[2mnx run[22m api:build:development  [2m[local cache][22m
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (791c3a9b1b02e996)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[2mNx read the output from the cache instead of running the command for 1 out of 1 tasks.[22m
+[1m[31mDebugger listening on ws://localhost:9229/1b6e92e9-89e7-469e-a2df-cc08205ced72
+Debugger listening on ws://localhost:9229/1b6e92e9-89e7-469e-a2df-cc08205ced72
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 23352  - [39m24/06/2026, 07:40:15 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 23352  - [39m24/06/2026, 07:40:15 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 23352  - [39m24/06/2026, 07:40:15 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 23352  - [39m24/06/2026, 07:40:15 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 23352  - [39m24/06/2026, 07:40:15 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[32m[Nest] 23352  - [39m24/06/2026, 07:40:15 [32m    LOG[39m [32mApplication is running on: http://localhost:3001/api[39m
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+[2m> [22m[2mnx run[22m api:build:development
+[2m> [22mwebpack-cli build
+webpack compiled [1m[32msuccessfully[39m[22m (ad5451b098961711)
+[2m[32m[39m[22m
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+[1m[31mDebugger listening on ws://localhost:9229/e020be3a-c5e7-4f33-8e45-802e25a7c39a
+Debugger listening on ws://localhost:9229/e020be3a-c5e7-4f33-8e45-802e25a7c39a
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m

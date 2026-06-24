@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "baseUrl": ".",
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@project-nps/api/*": ["apps/api/src/*"],
+      "@project-nps/shared-types": ["packages/shared-types/src/index.ts"],
+      "@project-nps/shared-types/*": ["packages/shared-types/src/*"],
+      "@project-nps/shared-ui": ["packages/shared-ui/src/index.ts"],
+      "@project-nps/shared-ui/*": ["packages/shared-ui/src/*"],
+      "@project-nps/web/*": ["apps/web/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

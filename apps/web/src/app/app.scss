@@ -1,0 +1,48 @@
+.app-shell {
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, rgba(0, 132, 255, 0.14), transparent 32rem),
+    linear-gradient(135deg, #f8fbff 0%, #eef4f8 48%, #f7f7f2 100%);
+  color: #16202a;
+  display: flex;
+  min-height: 100vh;
+  padding: 3rem;
+}
+
+.intro {
+  max-width: 44rem;
+}
+
+.eyebrow {
+  color: #0f766e;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.summary {
+  color: #45525f;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 1.25rem 0 0;
+  max-width: 36rem;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    align-items: flex-start;
+    padding: 2rem 1.25rem;
+  }
+
+  .summary {
+    font-size: 1rem;
+  }
+}
