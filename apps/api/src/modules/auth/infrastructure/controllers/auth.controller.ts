@@ -1,8 +1,11 @@
-import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Post, UseGuards } from '@nestjs/common';
 import { LoginUserDto } from '../../application/dto/login-user.dto';
 import { RegisterUserDto } from '../../application/dto/register-user.dto';
 import { LoginUserUseCase } from '../../application/use-cases/login-user.use-case';
 import { RegisterUserUseCase } from '../../application/use-cases/register-user.use-case';
+import { CurrentUser } from '../decorators/current-user.decorator';
+import { JwtAuthGuard } from '../guards/jwt-auth.guard';
+import { AuthenticatedUser } from '../strategies/jwt.strategy';
 
 @Controller('auth')
 export class AuthController {
@@ -21,5 +24,11 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   login(@Body() dto: LoginUserDto) {
     return this.loginUser.execute(dto);
+  }
+
+  @Get('me')
+  @UseGuards(JwtAuthGuard)
+  me(@CurrentUser() user: AuthenticatedUser) {
+    return user;
   }
 }
