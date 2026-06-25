@@ -46,3 +46,8 @@ export { Prisma }
  * 
  */
 export type User = Prisma.UserModel
+/**
+ * Model PasswordRecovery
+ * 
+ */
+export type PasswordRecovery = Prisma.PasswordRecoveryModel

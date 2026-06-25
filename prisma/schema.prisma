@@ -8,15 +8,29 @@ datasource db {
 }
 
 model User {
-  id           String     @id @default(cuid())
-  email        String     @unique @db.VarChar(160)
-  passwordHash String     @db.VarChar(255)
-  status       UserStatus @default(ACTIVE)
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-  deletedAt    DateTime?
+  id                 String             @id @default(cuid())
+  email              String             @unique @db.VarChar(160)
+  passwordHash       String             @db.VarChar(255)
+  status             UserStatus         @default(ACTIVE)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  deletedAt          DateTime?
+  passwordRecoveries PasswordRecovery[]
 
   @@map("users")
+}
+
+model PasswordRecovery {
+  id        String    @id @default(cuid())
+  userId    String
+  token     String    @unique @db.VarChar(36)
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("password_recoveries")
 }
 
 enum UserStatus {

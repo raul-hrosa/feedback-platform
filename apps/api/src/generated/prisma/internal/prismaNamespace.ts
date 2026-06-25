@@ -384,7 +384,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  PasswordRecovery: 'PasswordRecovery'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -400,7 +401,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user"
+    modelProps: "user" | "passwordRecovery"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -470,6 +471,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PasswordRecovery: {
+      payload: Prisma.$PasswordRecoveryPayload<ExtArgs>
+      fields: Prisma.PasswordRecoveryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PasswordRecoveryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PasswordRecoveryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload>
+        }
+        findFirst: {
+          args: Prisma.PasswordRecoveryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PasswordRecoveryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload>
+        }
+        findMany: {
+          args: Prisma.PasswordRecoveryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload>[]
+        }
+        create: {
+          args: Prisma.PasswordRecoveryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload>
+        }
+        createMany: {
+          args: Prisma.PasswordRecoveryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.PasswordRecoveryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload>
+        }
+        update: {
+          args: Prisma.PasswordRecoveryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload>
+        }
+        deleteMany: {
+          args: Prisma.PasswordRecoveryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PasswordRecoveryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.PasswordRecoveryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PasswordRecoveryPayload>
+        }
+        aggregate: {
+          args: Prisma.PasswordRecoveryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePasswordRecovery>
+        }
+        groupBy: {
+          args: Prisma.PasswordRecoveryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PasswordRecoveryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PasswordRecoveryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PasswordRecoveryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -522,6 +589,18 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const PasswordRecoveryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  token: 'token',
+  expiresAt: 'expiresAt',
+  usedAt: 'usedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type PasswordRecoveryScalarFieldEnum = (typeof PasswordRecoveryScalarFieldEnum)[keyof typeof PasswordRecoveryScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -545,6 +624,15 @@ export const UserOrderByRelevanceFieldEnum = {
 } as const
 
 export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
+
+
+export const PasswordRecoveryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  token: 'token'
+} as const
+
+export type PasswordRecoveryOrderByRelevanceFieldEnum = (typeof PasswordRecoveryOrderByRelevanceFieldEnum)[keyof typeof PasswordRecoveryOrderByRelevanceFieldEnum]
 
 
 
@@ -691,6 +779,7 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
+  passwordRecovery?: Prisma.PasswordRecoveryOmit
 }
 
 /* Types for Logging */
