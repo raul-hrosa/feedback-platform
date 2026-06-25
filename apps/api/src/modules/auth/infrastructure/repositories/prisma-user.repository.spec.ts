@@ -19,10 +19,10 @@ const makeDbRecord = () => ({
 
 describe('PrismaUserRepository', () => {
   let repository: PrismaUserRepository;
-  let mockDb: { user: { findUnique: jest.Mock; create: jest.Mock } };
+  let mockDb: { user: { findUnique: jest.Mock; create: jest.Mock; update: jest.Mock } };
 
   beforeEach(() => {
-    mockDb = { user: { findUnique: jest.fn(), create: jest.fn() } };
+    mockDb = { user: { findUnique: jest.fn(), create: jest.fn(), update: jest.fn() } };
     repository = new PrismaUserRepository(
       mockDb as unknown as import('../../../../core/database/database.service').DatabaseService,
     );
@@ -85,6 +85,19 @@ describe('PrismaUserRepository', () => {
       const result = await repository.findById('nonexistent-id');
 
       expect(result).toBeNull();
+    });
+  });
+
+  describe('updatePassword', () => {
+    it('should call db.user.update with the correct id and passwordHash', async () => {
+      mockDb.user.update.mockResolvedValue(undefined);
+
+      await repository.updatePassword('id-1', 'new_hashed_pw');
+
+      expect(mockDb.user.update).toHaveBeenCalledWith({
+        where: { id: 'id-1' },
+        data: { passwordHash: 'new_hashed_pw' },
+      });
     });
   });
 });
