@@ -16,7 +16,7 @@ describe('LoginUserUseCase', () => {
   let tokenService: jest.Mocked<TokenService>;
 
   beforeEach(() => {
-    userRepository = { findByEmail: jest.fn(), create: jest.fn() };
+    userRepository = { findById: jest.fn(), findByEmail: jest.fn(), create: jest.fn() };
     hashService = { hash: jest.fn(), compare: jest.fn() };
     tokenService = { generateAccessToken: jest.fn() };
     useCase = new LoginUserUseCase(userRepository, hashService, tokenService);
