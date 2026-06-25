@@ -14,8 +14,8 @@ describe('RegisterUserUseCase', () => {
   let hashService: jest.Mocked<HashService>;
 
   beforeEach(() => {
-    userRepository = { findByEmail: jest.fn(), create: jest.fn() };
-    hashService = { hash: jest.fn() };
+    userRepository = { findById: jest.fn(), findByEmail: jest.fn(), create: jest.fn() };
+    hashService = { hash: jest.fn(), compare: jest.fn() };
     useCase = new RegisterUserUseCase(userRepository, hashService);
   });
 

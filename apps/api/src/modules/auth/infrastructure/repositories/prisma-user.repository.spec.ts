@@ -66,4 +66,25 @@ describe('PrismaUserRepository', () => {
       });
     });
   });
+
+  describe('findById', () => {
+    it('should return a User entity when record exists', async () => {
+      mockDb.user.findUnique.mockResolvedValue(makeDbRecord());
+
+      const result = await repository.findById('id-1');
+
+      expect(result).toBeInstanceOf(User);
+      expect(result?.id).toBe('id-1');
+      expect(result?.status).toBe(UserStatus.ACTIVE);
+      expect(mockDb.user.findUnique).toHaveBeenCalledWith({ where: { id: 'id-1' } });
+    });
+
+    it('should return null when record does not exist', async () => {
+      mockDb.user.findUnique.mockResolvedValue(null);
+
+      const result = await repository.findById('nonexistent-id');
+
+      expect(result).toBeNull();
+    });
+  });
 });

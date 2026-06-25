@@ -8,6 +8,12 @@ import { UserRepository } from '../../domain/repositories/user.repository';
 export class PrismaUserRepository implements UserRepository {
   constructor(private readonly db: DatabaseService) {}
 
+  async findById(id: string): Promise<User | null> {
+    const record = await this.db.user.findUnique({ where: { id } });
+    if (!record) return null;
+    return this.toEntity(record);
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     const record = await this.db.user.findUnique({ where: { email } });
     if (!record) return null;
