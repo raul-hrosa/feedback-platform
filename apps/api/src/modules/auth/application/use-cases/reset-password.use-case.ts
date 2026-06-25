@@ -1,5 +1,11 @@
-import { Inject, Injectable, UnprocessableEntityException } from '@nestjs/common';
+import {
+  ForbiddenException,
+  Inject,
+  Injectable,
+  UnprocessableEntityException,
+} from '@nestjs/common';
 import { HASH_SERVICE, PASSWORD_RECOVERY_REPOSITORY, USER_REPOSITORY } from '../../auth.constants';
+import { UserStatus } from '../../domain/enums/user-status.enum';
 import { PasswordRecoveryRepository } from '../../domain/repositories/password-recovery.repository';
 import { UserRepository } from '../../domain/repositories/user.repository';
 import { HashService } from '../ports/hash.service';
@@ -25,6 +31,11 @@ export class ResetPasswordUseCase {
     }
     if (recovery.usedAt !== null) {
       throw new UnprocessableEntityException('Token already used');
+    }
+
+    const user = await this.userRepository.findById(recovery.userId);
+    if (!user || user.deletedAt !== null || user.status !== UserStatus.ACTIVE) {
+      throw new ForbiddenException('Account is not active');
     }
 
     const passwordHash = await this.hashService.hash(dto.password);

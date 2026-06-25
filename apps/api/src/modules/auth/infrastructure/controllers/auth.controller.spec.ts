@@ -296,6 +296,7 @@ describe('AuthController (integration)', () => {
   describe('POST /auth/reset-password', () => {
     it('should return 200 when token is valid', async () => {
       mockPasswordRecoveryRepository.findByToken.mockResolvedValue(makeRecovery());
+      mockUserRepository.findById.mockResolvedValue(makeUser());
       mockHashService.hash.mockResolvedValue('new_hashed_pw');
       mockUserRepository.updatePassword.mockResolvedValue(undefined);
       mockPasswordRecoveryRepository.markAsUsed.mockResolvedValue(undefined);
@@ -344,6 +345,26 @@ describe('AuthController (integration)', () => {
         .post('/auth/reset-password')
         .send({ token: 'not-a-uuid', password: '123' })
         .expect(400);
+    });
+
+    it('should return 403 when user is inactive', async () => {
+      mockPasswordRecoveryRepository.findByToken.mockResolvedValue(makeRecovery());
+      mockUserRepository.findById.mockResolvedValue(makeUser(UserStatus.INACTIVE));
+
+      await request(app.getHttpServer())
+        .post('/auth/reset-password')
+        .send({ token: '550e8400-e29b-41d4-a716-446655440000', password: 'NewPassword1' })
+        .expect(403);
+    });
+
+    it('should return 403 when user is soft-deleted', async () => {
+      mockPasswordRecoveryRepository.findByToken.mockResolvedValue(makeRecovery());
+      mockUserRepository.findById.mockResolvedValue(makeUser(UserStatus.ACTIVE, new Date()));
+
+      await request(app.getHttpServer())
+        .post('/auth/reset-password')
+        .send({ token: '550e8400-e29b-41d4-a716-446655440000', password: 'NewPassword1' })
+        .expect(403);
     });
   });
 });

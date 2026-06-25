@@ -1,7 +1,9 @@
-import { UnprocessableEntityException } from '@nestjs/common';
+import { ForbiddenException, UnprocessableEntityException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { HASH_SERVICE, PASSWORD_RECOVERY_REPOSITORY, USER_REPOSITORY } from '../../auth.constants';
 import { PasswordRecovery } from '../../domain/entities/password-recovery.entity';
+import { User } from '../../domain/entities/user.entity';
+import { UserStatus } from '../../domain/enums/user-status.enum';
 import { ResetPasswordUseCase } from './reset-password.use-case';
 
 const makeRecovery = (
@@ -62,6 +64,17 @@ describe('ResetPasswordUseCase', () => {
 
   it('should reset the password when token is valid', async () => {
     mockPasswordRecoveryRepository.findByToken.mockResolvedValue(makeRecovery());
+    mockUserRepository.findById.mockResolvedValue(
+      new User(
+        'user-id-1',
+        'user@email.com',
+        'hashed_pw',
+        UserStatus.ACTIVE,
+        new Date(),
+        new Date(),
+        null,
+      ),
+    );
     mockHashService.hash.mockResolvedValue('new_hashed_pw');
     mockUserRepository.updatePassword.mockResolvedValue(undefined);
     mockPasswordRecoveryRepository.markAsUsed.mockResolvedValue(undefined);
@@ -108,6 +121,48 @@ describe('ResetPasswordUseCase', () => {
     await expect(
       useCase.execute({ token: 'valid-token-uuid', password: 'NewPassword1' }),
     ).rejects.toThrow(UnprocessableEntityException);
+
+    expect(mockUserRepository.updatePassword).not.toHaveBeenCalled();
+  });
+
+  it('should throw ForbiddenException when user is inactive', async () => {
+    mockPasswordRecoveryRepository.findByToken.mockResolvedValue(makeRecovery());
+    mockUserRepository.findById.mockResolvedValue(
+      new User(
+        'user-id-1',
+        'user@email.com',
+        'hashed_pw',
+        UserStatus.INACTIVE,
+        new Date(),
+        new Date(),
+        null,
+      ),
+    );
+
+    await expect(
+      useCase.execute({ token: 'valid-token-uuid', password: 'NewPassword1' }),
+    ).rejects.toThrow(ForbiddenException);
+
+    expect(mockUserRepository.updatePassword).not.toHaveBeenCalled();
+  });
+
+  it('should throw ForbiddenException when user is soft-deleted', async () => {
+    mockPasswordRecoveryRepository.findByToken.mockResolvedValue(makeRecovery());
+    mockUserRepository.findById.mockResolvedValue(
+      new User(
+        'user-id-1',
+        'user@email.com',
+        'hashed_pw',
+        UserStatus.ACTIVE,
+        new Date(),
+        new Date(),
+        new Date(),
+      ),
+    );
+
+    await expect(
+      useCase.execute({ token: 'valid-token-uuid', password: 'NewPassword1' }),
+    ).rejects.toThrow(ForbiddenException);
 
     expect(mockUserRepository.updatePassword).not.toHaveBeenCalled();
   });
